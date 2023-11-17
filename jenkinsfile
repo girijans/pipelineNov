@@ -1,0 +1,55 @@
+
+pipeline {
+    agent any
+    stages {
+       stage ('checkout'){
+          steps {
+	     step {
+	         git branch: 'main', credentialsId: 'admin', url:'https://github.com/girijans/pipelineNov.git'
+             }       
+             step {
+	         sh 'ls'
+	     }
+	     step {
+	         sh 'cat jenkinsfile'
+             }
+	  }
+      }
+      stage ('build'){
+         steps {
+	     step {
+	         echo " I am Build stage "
+	     }
+	 }
+      }
+      stage('test'){
+          steps {
+	      step {
+	          echo " I am Test stage"
+              }
+	  }
+     }
+     stage('deploy'){
+           steps{
+	      step{
+	          echo " I am deploy stage"
+	      }
+	   }
+    }
+    stage('Unit test'){
+           steps{
+	     step{
+	        echo " I am Unit test stage"
+	     }
+	  }
+     }
+     stage('delivery stage'){
+          steps{
+	      step{
+	          echo" I am delivery stage"
+	      }
+	  }
+      }
+ }
+
+       
