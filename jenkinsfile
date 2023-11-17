@@ -5,7 +5,7 @@ pipeline {
        stage ('checkout'){
           steps {
 	     step {
-	         git branch: 'main', credentialsId: 'admin', url:'https://github.com/girijans/pipelineNov.git'
+	         git branch: 'main', credentialsId: 'admin', url: 'https://github.com/girijans/pipelineNov.git'
              }       
              step {
 	         sh 'ls'
