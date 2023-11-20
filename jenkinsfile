@@ -4,52 +4,36 @@ pipeline {
     stages {
        stage ('checkout'){
           steps {
-	     step {
-	         git branch: 'main', credentialsId: 'admin', url: 'https://github.com/girijans/pipelineNov.git'
-             }       
-             step {
-	         sh 'ls'
-	     }
-	     step {
-	         sh 'cat Jenkinsfile'
+	      git branch: 'main', credentialsId: 'admin', url: 'https://github.com/girijans/pipelineNov.git'  
+              sh 'ls'
+	      sh 'cat Jenkinsfile'
              }
 	  }
-      }
-      stage ('build'){
+       stage ('build'){
          steps {
-	     step {
-	         echo " I am Build stage "
+	      echo " I am Build stage "
 	     }
-	 }
       }
       stage('test'){
           steps {
-	      step {
-	          echo " I am Test stage"
+	      echo " I am Test stage"
               }
-	  }
-     }
+        }
      stage('deploy'){
            steps{
-	      step{
-	          echo " I am deploy stage"
+	        echo " I am deploy stage"
 	      }
-	   }
     }
     stage('Unit test'){
            steps{
-	     step{
-	        echo " I am Unit test stage"
+	      echo " I am Unit test stage"
 	     }
-	  }
      }
      stage('delivery stage'){
           steps{
-	      step{
-	          echo" I am delivery stage"
+	      echo" I am delivery stage"
 	      }
-	  }
-      }
+       }
   }
 }
        
