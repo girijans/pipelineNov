@@ -11,7 +11,7 @@ pipeline {
 	         sh 'ls'
 	     }
 	     step {
-	         sh 'cat jenkinsfile'
+	         sh 'cat Jenkinsfile'
              }
 	  }
       }
